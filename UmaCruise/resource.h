@@ -79,10 +79,10 @@
 
 #define IDC_BUTTON_SHOW_TRAINING_WINDOW	1700
 #define IDC_EDIT_SPEED_COUNT			1701
-#define IDC_EDIT_STAMINA_COUNT			1701
-#define IDC_EDIT_POWER_COUNT			1701
-#define IDC_EDIT_GUTS_COUNT			    1701
-#define IDC_EDIT_WISE_COUNT			    1701
+#define IDC_EDIT_STAMINA_COUNT			1702
+#define IDC_EDIT_POWER_COUNT			1703
+#define IDC_EDIT_GUTS_COUNT			    1704
+#define IDC_EDIT_WISE_COUNT			    1705
 
 // Next default values for new objects
 // 
