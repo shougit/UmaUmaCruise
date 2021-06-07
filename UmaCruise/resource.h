@@ -8,6 +8,7 @@
 #define IDD_PREVIEW                     202
 #define IDD_CONFIG                      205
 #define IDD_RACELIST                    207
+#define IDD_TRAINING                    208
 #define IDC_BUTTON_SCREENSHOT           1000
 #define IDC_EDIT_EVENTNAME              1001
 #define IDC_EDIT_EVENT_SOURCE           1002
@@ -75,6 +76,13 @@
 #define IDC_CHECK_LOCATION_HANSHIN      1638
 #define IDC_CHECK_LOCATION_OGURA        1639
 #define IDC_CHECK_LOCATION_OOI          1640
+
+#define IDC_BUTTON_SHOW_TRAINING_WINDOW	1700
+#define IDC_EDIT_SPEED_COUNT			1701
+#define IDC_EDIT_STAMINA_COUNT			1701
+#define IDC_EDIT_POWER_COUNT			1701
+#define IDC_EDIT_GUTS_COUNT			    1701
+#define IDC_EDIT_WISE_COUNT			    1701
 
 // Next default values for new objects
 // 

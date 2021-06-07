@@ -131,6 +131,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_WINDOWS;STRICT;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalOptions>/source-charset:utf-8 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>D:\work\uma\UmaUmaCruise\vcpkg_installed\x64-windows-static\include\wtl;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -230,6 +231,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="TesseractWrapper.cpp" />
+    <ClCompile Include="TrainingWindow.cpp" />
     <ClCompile Include="UmaCruise.cpp" />
     <ClCompile Include="UmaEventLibrary.cpp" />
     <ClCompile Include="UmaTextRecognizer.cpp" />
@@ -264,6 +266,7 @@
     <ClInclude Include="simstring\simstring.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="TesseractWrapper.h" />
+    <ClInclude Include="TrainingWindow.h" />
     <ClInclude Include="UmaEventLibrary.h" />
     <ClInclude Include="UmaTextRecognizer.h" />
     <ClInclude Include="Utility\CodeConvert.h" />

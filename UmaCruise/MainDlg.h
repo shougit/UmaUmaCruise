@@ -16,6 +16,7 @@
 #include "aboutdlg.h"
 #include "PreviewWindow.h"
 #include "RaceListWindow.h"
+#include "TrainingWindow.h"
 #include "Config.h"
 
 #include "DarkModeUI.h"
@@ -86,6 +87,8 @@ public:
 
 		COMMAND_ID_HANDLER_EX(IDC_BUTTON_REVISION, OnEventRevision)	
 
+		COMMAND_ID_HANDLER_EX(IDC_BUTTON_SHOW_TRAINING_WINDOW,OnEventIdeyo)
+
 		CHAIN_MSG_MAP(DarkModeUI<CMainDlg>)
 	END_MSG_MAP()
 
@@ -117,6 +120,8 @@ public:
 
 	void OnEventRevision(UINT uNotifyCode, int nID, CWindow wndCtl);
 
+	void OnEventIdeyo(UINT uNotifyCode, int nID, CWindow wndCtl);
+
 private:
 	void	_DockOrPopupRaceListWindow();
 	void	_ExtentOrShrinkWindow(bool bExtent);
@@ -131,6 +136,8 @@ private:
 
 	PreviewWindow	m_previewWindow;
 	RaceListWindow	m_raceListWindow;
+	TrainingWindow	m_trainingWindow;
+	
 
 	CString	m_targetWindowName;
 	CString m_targetClassName;

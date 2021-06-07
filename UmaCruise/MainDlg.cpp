@@ -72,9 +72,11 @@ bool SaveScreenShot(const std::wstring& device, const std::wstring& filePath)
 
 /////////////////////////////////////////////////////////////////////////////
 
-CMainDlg::CMainDlg() : m_raceListWindow(m_config)
+CMainDlg::CMainDlg() : m_raceListWindow(m_config), m_trainingWindow(m_config)
 {
 }
+
+
 
 BOOL CMainDlg::PreTranslateMessage(MSG* pMsg)
 {
@@ -162,6 +164,8 @@ LRESULT CMainDlg::OnInitDialog(UINT, WPARAM, LPARAM, BOOL&)
 	m_umaEventLibrary.RegisterNotifyChangeIkuseiUmaMusume([this](const std::wstring& umaName) {
 		m_raceListWindow.ChangeIkuseiUmaMusume(umaName);
 	});
+
+	m_trainingWindow.Create(m_hWnd);
 
 	try {
 		{
@@ -796,6 +800,7 @@ void CMainDlg::_ExtentOrShrinkWindow(bool bExtent)
 
 	int windowWidth = 0;
 	if (bExtent) {
+		// レース一覧の表示
 		ATLASSERT(IsChild(m_raceListWindow));
 		CRect rcClientGroup;
 		CWindow wndRaceListGroup = m_raceListWindow.GetDlgItem(IDC_STATIC_RACELIST_GROUP);
@@ -804,7 +809,9 @@ void CMainDlg::_ExtentOrShrinkWindow(bool bExtent)
 		windowWidth = rcClientGroup.right;
 
 		m_raceListWindow.SetWindowPos(NULL, 0, 0, 0, 0, SWP_NOZORDER | SWP_NOMOVE | SWP_NOSIZE | SWP_SHOWWINDOW);
+
 	} else {
+		// レース一覧の非表示
 		CRect rcCtrl;
 		GetDlgItem(IDC_BUTTON_SHOWHIDE_RACELIST).GetClientRect(&rcCtrl);
 		GetDlgItem(IDC_BUTTON_SHOWHIDE_RACELIST).MapWindowPoints(m_hWnd, &rcCtrl);
@@ -831,3 +838,6 @@ void CMainDlg::_UpdateEventOptions(const UmaEventLibrary::UmaEvent& umaEvent)
 }
 
 
+void CMainDlg::OnEventIdeyo(UINT uNotifyCode, int nID, CWindow wndCtl) {
+	m_trainingWindow.SetWindowPos(NULL, 0, 0, 0, 0, SWP_NOZORDER | SWP_NOMOVE | SWP_NOSIZE | SWP_SHOWWINDOW);
+}

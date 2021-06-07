@@ -34,7 +34,7 @@ void	LoadPointSizeFromJson(const json& json, const std::string& key, CPoint& pt,
 	pt.x = json[key]["x"];
 	pt.y = json[key]["y"];
 	size.cx = json[key]["width"];
-	size.cy = json[key]["height"];
+	size.cy = json[key]["height"]; 
 }
 
 void	SavePointSizeFromJson(json& json, const std::string& key, const CPoint& pt, const CSize& size)
